@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>858</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Byte Exploder</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="vl_root">
+    <property name="spacing">
+     <number>10</number>
+    </property>
+    <property name="leftMargin">
+     <number>14</number>
+    </property>
+    <property name="topMargin">
+     <number>14</number>
+    </property>
+    <property name="rightMargin">
+     <number>14</number>
+    </property>
+    <property name="bottomMargin">
+     <number>14</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="hl_header">
+      <item>
+       <widget class="QLabel" name="lbl_title">
+        <property name="styleSheet">
+         <string>font-size:18px;font-weight:700;</string>
+        </property>
+        <property name="text">
+         <string>Byte Exploder Pro</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="sp_header">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_cancel">
+        <property name="text">
+         <string>⏹️ لغو عملیات</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter_main">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QWidget" name="w_top_tabs">
+       <layout class="QVBoxLayout" name="vl_tabs">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab_encrypt">
+           <attribute name="title">
+            <string>🔒 رمزگذاری</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="vl_encrypt">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="gb_encrypt_file">
+              <property name="title">
+               <string>ورودی</string>
+              </property>
+              <layout class="QVBoxLayout" name="vl_encrypt_file">
+               <item>
+                <layout class="QHBoxLayout" name="hl_input_mode">
+                 <item>
+                  <widget class="QRadioButton" name="rb_input_file">
+                   <property name="text">
+                    <string>فایل / پوشه</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="rb_input_text">
+                   <property name="text">
+                    <string>متن</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="sp_input_mode">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="hl_encrypt_file">
+                 <item>
+                  <widget class="QLineEdit" name="le_input_file">
+                   <property name="placeholderText">
+                    <string>مسیر فایل ورودی...</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_browse_file">
+                   <property name="text">
+                    <string>مرور...</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_browse_folder">
+                   <property name="text">
+                    <string>پوشه...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPlainTextEdit" name="te_input_text">
+                 <property name="placeholderText">
+                  <string>متن خود را اینجا بنویسید یا جای‌گذاری کنید...</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="hl_block">
+                 <item>
+                  <widget class="QLabel" name="lbl_block">
+                   <property name="text">
+                    <string>Block Size:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="cb_block_mode">
+                   <item>
+                    <property name="text">
+                     <string>Auto</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Manual</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="sb_block_size">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="minimum">
+                    <number>8</number>
+                   </property>
+                   <property name="maximum">
+                    <number>64</number>
+                   </property>
+                   <property name="singleStep">
+                    <number>4</number>
+                   </property>
+                   <property name="value">
+                    <number>16</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="sp_block_right">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="hl_safe_encode">
+                 <item>
+                  <widget class="QCheckBox" name="cb_safe_encode">
+                   <property name="toolTip">
+                    <string>استفاده از حالت امن برای کاهش مصرف RAM هنگام Encode</string>
+                   </property>
+                   <property name="text">
+                    <string>Safe Encode</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="btn_safe_encode_help">
+                   <property name="toolTip">
+                    <string>راهنمای Safe Encode</string>
+                   </property>
+                   <property name="text">
+                    <string>?</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="sp_safe_mid">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lbl_output_format">
+                   <property name="text">
+                    <string>خروجی:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="cb_output_format">
+                   <item>
+                    <property name="text">
+                     <string>PNG (*.png)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>EXPLD (*.expld)</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btn_encrypt_file">
+                 <property name="text">
+                  <string>🚀 شروع رمزگذاری</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_decrypt">
+           <attribute name="title">
+            <string>🔓 رمزگشایی عکس</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="vl_decrypt">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="gb_decrypt_image">
+              <property name="title">
+               <string>انتخاب عکس رمزشده</string>
+              </property>
+              <layout class="QHBoxLayout" name="hl_decrypt_image">
+               <item>
+                <widget class="QLineEdit" name="le_image_file">
+                 <property name="placeholderText">
+                  <string>مسیر عکس (PNG)...</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btn_browse_image">
+                 <property name="text">
+                  <string>مرور...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="gb_key">
+              <property name="title">
+               <string>کلید</string>
+              </property>
+              <layout class="QVBoxLayout" name="vl_key">
+               <item>
+                <layout class="QHBoxLayout" name="hl_key">
+                 <item>
+                  <widget class="QLineEdit" name="le_key">
+                   <property name="placeholderText">
+                    <string>مسیر فایل کلید (JSON)...</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_load_key">
+                   <property name="text">
+                    <string>بارگذاری</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_copy_key">
+                   <property name="text">
+                    <string>کپی</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="hl_key_actions">
+                 <item>
+                  <widget class="QPushButton" name="btn_check_key">
+                   <property name="text">
+                    <string>🔍 بررسی کلید</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="cb_safe_decode">
+                   <property name="toolTip">
+                    <string>استفاده از حالت امن برای کاهش مصرف RAM هنگام Decode</string>
+                   </property>
+                   <property name="text">
+                    <string>Safe Decode</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="btn_safe_decode_help">
+                   <property name="toolTip">
+                    <string>راهنمای Safe Decode</string>
+                   </property>
+                   <property name="text">
+                    <string>?</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="sp_key_actions">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_decrypt_image">
+                   <property name="text">
+                    <string>🚀 شروع رمزگشایی</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="gb_output_text">
+              <property name="title">
+               <string>متن رمزگشایی‌شده</string>
+              </property>
+              <layout class="QVBoxLayout" name="vl_output_text">
+               <item>
+                <widget class="QPlainTextEdit" name="te_output_text">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="hl_output_text">
+                 <item>
+                  <widget class="QPushButton" name="btn_copy_text">
+                   <property name="text">
+                    <string>کپی متن</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_save_text">
+                   <property name="text">
+                    <string>ذخیره...</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="sp_output_text">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_preview">
+           <attribute name="title">
+            <string>👁️ پیش‌نمایش</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="vl_preview">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lbl_preview">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="text">
+               <string>پیش‌نمایش عکس</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="table_metadata">
+              <property name="rowCount">
+               <number>0</number>
+              </property>
+              <property name="columnCount">
+               <number>2</number>
+              </property>
+              <column>
+               <property name="text">
+                <string>ویژگی</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>مقدار</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="w_bottom_logs">
+       <layout class="QVBoxLayout" name="vl_logs">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QProgressBar" name="progressBar">
+          <property name="value">
+           <number>0</number>
+          </property>
+          <property name="textVisible">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_verbose">
+          <property name="text">
+           <string>خروجی عملیات (Verbose):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="te_verbose">
+          <property name="placeholderText">
+           <string>Log...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

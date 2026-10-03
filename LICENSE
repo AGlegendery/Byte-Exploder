@@ -1,0 +1,60 @@
+Byte Exploder — Attribution-Required License (v1.0)
+Copyright (c) 2026 AGlegend (https://github.com/AGlegendery). All rights reserved.
+
+1. Definitions
+   "Software" means the source code, binaries, assets, and documentation in
+   this repository.
+   "Author" means AGlegend (https://github.com/AGlegendery), the copyright holder.
+   "You" means any person or entity exercising rights under this License.
+
+2. Grant
+   Subject to the conditions below, the Author grants You a worldwide,
+   royalty-free, non-exclusive license to use, copy, modify, and distribute the
+   Software, including as part of a larger work.
+
+3. Mandatory Attribution (the core condition)
+   Any use, copy, modification, distribution, or derivative work of the Software
+   MUST give clear and visible credit to the Author. Specifically, You must:
+     (a) retain this LICENSE file and the copyright notice above in all copies
+         and substantial portions of the Software;
+     (b) retain any author credit shown in the Software's user interface,
+         "About" screen, help text, or startup banner, and not hide, obscure,
+         or remove it; and
+     (c) in any distributed product, derivative work, or public deployment that
+         is based on the Software, state in a reasonably visible place (for
+         example a README, credits screen, or documentation):
+             "By AGlegend — https://github.com/AGlegendery"
+   Removing, falsifying, or obscuring the Author's name or the attribution
+   required by this Section immediately terminates all rights granted to You.
+
+4. No Misrepresentation
+   You may not claim to be the original author of the Software, nor present the
+   Software or a derivative of it as your own original work without the
+   attribution required in Section 3. You may not use the Author's name to
+   endorse or promote products derived from the Software without prior written
+   permission.
+
+5. Redistribution of Modifications
+   If You distribute a modified version, You must mark it as changed and must
+   not misrepresent it as the original Software, while still providing the
+   attribution required in Section 3.
+
+6. Termination
+   Any breach of Sections 3, 4, or 5 automatically terminates this License and
+   all rights granted to You. Upon termination You must stop using and
+   distributing the Software.
+
+7. No Warranty
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN
+   ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+8. Intended Use
+   The Software is a general-purpose file-obfuscation and privacy utility. You
+   are responsible for using it in compliance with all laws that apply to You.
+
+For permissions beyond the scope of this License (for example, use without
+attribution or a commercial arrangement), contact the Author.
