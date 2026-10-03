@@ -14,9 +14,6 @@ import struct
 import sys
 import tempfile
 
-# Headless Qt (exploder_core imports PySide6.QtCore).
-os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-
 # Make the project root importable when run directly.
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 

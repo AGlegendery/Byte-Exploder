@@ -3,7 +3,6 @@
 app.py
 ------
 Entry point for the Byte Exploder desktop app (webview UI: web/ + web_api.py).
-The older Qt UI is still available as app_qt.py.
 
 Run:
     python app.py
@@ -18,8 +17,7 @@ try:
     import webview
 except ImportError:  # pragma: no cover
     sys.exit(
-        "Byte Exploder needs pywebview:  pip install pywebview\n"
-        "(the older Qt UI is still available: python app_qt.py)"
+        "Byte Exploder needs pywebview:  pip install pywebview"
     )
 
 from web_api import Api

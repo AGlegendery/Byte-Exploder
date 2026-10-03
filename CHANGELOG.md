@@ -9,7 +9,7 @@ All notable changes to this project are documented here.
   page shows the input as pixels while you type or pick a file, then the scrambled
   image; long jobs run in the background with progress and cancel. Picking an image
   shows whether a key is hidden in it and auto-selects `<image>_key.json` next to it.
-  The Qt UI is still available as `app_qt.py`; the engine no longer depends on Qt.
+  The Qt UI was removed; the engine no longer depends on Qt.
 - **English UI**: switch between Persian (RTL) and English (LTR) from the header; the
   choice is remembered. The app name stays "Byte Exploder" in both languages.
 - "Allow empty text" option: encrypt an empty text box on purpose.

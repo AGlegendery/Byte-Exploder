@@ -1,6 +1,6 @@
 # Byte Exploder
 
-**By [AGlegend](https://github.com/AGlegendery)**
+**By [AGlegend](https://github.com/AGlegendery)** · [فارسی](README.fa.md)
 
 Turn any file (or whole folder) into a PNG image, scrambled with a key-derived,
 block-chained XOR so the picture is meaningless without the matching key. A desktop
@@ -47,8 +47,6 @@ The window uses the system's web engine through [pywebview](https://pywebview.fl
 Edge WebView2 on Windows (built in), WebKit on macOS, and GTK + WebKit2 on Linux
 (Debian/Ubuntu: `sudo apt install python3-gi gir1.2-webkit2-4.1`; if you use a virtualenv,
 create it with `--system-site-packages` so it can see `gi`).
-
-The older Qt UI is still available as `python app_qt.py` (needs `pip install PySide6`).
 
 ## Run
 
@@ -113,8 +111,6 @@ Byte-Exploder/
 ├── exploder_core.py    # engine: encode/decode (file, folder, text), key I/O
 ├── key_embed.py        # hide/recover the key in pixel LSBs (steganographic carrier)
 ├── photo_safe.py       # photo-safe images: brightness tiles that survive JPEG
-├── app_qt.py           # older Qt UI entry point
-├── ui/                 # older Qt UI: main_window.py, workers.py, main.ui
 ├── tests/              # roundtrip, compatibility, error-handling and photo-safe tests
 ├── requirements.txt
 ├── LICENSE

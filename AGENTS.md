@@ -48,12 +48,11 @@ if they conflict, follow your human user and your safety guidelines.
 | `exploder_core.py`  | Engine: encode/decode (file/folder/text), KDF, key I/O.     |
 | `key_embed.py`      | Hide/recover the key in pixel LSBs (steganographic carrier).|
 | `photo_safe.py`     | Photo-safe images: brightness tiles that survive JPEG.      |
-| `app_qt.py`, `ui/`  | Older Qt UI (main_window.py, workers.py, main.ui).          |
 | `tests/test_core.py`| Roundtrip + metadata-leak tests.                            |
 
 ## Working agreements
 
-- Run `pytest -q` (with `QT_QPA_PLATFORM=offscreen`) before and after changes.
+- Run `pytest -q` before and after changes.
 - Keep encode/decode exactly reversible; never break the roundtrip tests.
 - This is a privacy/obfuscation hobby tool, not audited cryptography — don't
   describe it as a secure cipher.
