@@ -1,0 +1,200 @@
+<!doctype html>
+<!-- Byte Exploder — By AGlegend (https://github.com/AGlegendery) -->
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Byte Exploder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <main class="panel">
+    <header class="brand">
+      <div>
+        <h1 dir="ltr">Byte Exploder</h1>
+        <p class="lede" data-i18n="lede"></p>
+      </div>
+      <div class="brand-actions">
+        <button type="button" class="btn quiet" id="btn-tour" data-i18n="btn.tour"></button>
+        <button type="button" class="btn quiet" id="btn-lang" data-i18n-aria="lang.switch"></button>
+      </div>
+    </header>
+
+    <div class="tabs" role="tablist" data-i18n-aria="tabs">
+      <button type="button" role="tab" id="tab-enc" aria-controls="panel-enc" aria-selected="true" data-i18n="tab.enc"></button>
+      <button type="button" role="tab" id="tab-dec" aria-controls="panel-dec" aria-selected="false" tabindex="-1" data-i18n="tab.dec"></button>
+    </div>
+
+    <!-- ============================ Encrypt ============================ -->
+    <section class="tabpanel" id="panel-enc" role="tabpanel" aria-labelledby="tab-enc">
+      <div class="group">
+        <span class="label" id="kind-label" data-i18n="label.input"></span>
+        <div class="seg" role="radiogroup" aria-labelledby="kind-label">
+          <label><input type="radio" name="kind" value="file" checked><span data-i18n="kind.file"></span></label>
+          <label><input type="radio" name="kind" value="folder"><span data-i18n="kind.folder"></span></label>
+          <label><input type="radio" name="kind" value="text"><span data-i18n="kind.text"></span></label>
+        </div>
+      </div>
+
+      <div class="picker" id="enc-picker">
+        <div class="picker-body">
+          <span class="picker-name" id="enc-name"></span>
+          <span class="picker-dir" id="enc-dir" dir="ltr"></span>
+        </div>
+        <button type="button" class="btn" id="enc-browse"></button>
+      </div>
+
+      <div class="textbox" id="enc-textbox" hidden>
+        <textarea id="enc-text" dir="auto" spellcheck="false" data-i18n-placeholder="text.placeholder"></textarea>
+        <span class="counter" id="enc-counter"></span>
+        <label class="switch">
+          <input type="checkbox" id="opt-empty">
+          <span class="track" aria-hidden="true"></span>
+          <span class="switch-text">
+            <span data-i18n="opt.empty"></span>
+            <small data-i18n="opt.empty_hint"></small>
+          </span>
+        </label>
+      </div>
+
+      <div class="options">
+        <label class="switch" id="embed-row">
+          <input type="checkbox" id="opt-embed">
+          <span class="track" aria-hidden="true"></span>
+          <span class="switch-text">
+            <span data-i18n="opt.embed"></span>
+            <small data-i18n="opt.embed_hint"></small>
+          </span>
+        </label>
+
+        <label class="switch" id="photo-row">
+          <input type="checkbox" id="opt-photo">
+          <span class="track" aria-hidden="true"></span>
+          <span class="switch-text">
+            <span data-i18n="opt.photo"></span>
+            <small id="photo-hint"></small>
+            <small class="usage" id="photo-usage" aria-live="polite"></small>
+          </span>
+        </label>
+
+        <div class="option-row" id="opt-row">
+          <label class="field">
+            <span class="label" data-i18n="opt.block"></span>
+            <select id="opt-block"></select>
+          </label>
+          <div class="field">
+            <span class="label" id="format-label" data-i18n="opt.format"></span>
+            <div class="seg seg-small" role="radiogroup" aria-labelledby="format-label">
+              <label><input type="radio" name="format" value="png" checked><span>PNG</span></label>
+              <label><input type="radio" name="format" value="expld"><span>EXPLD</span></label>
+            </div>
+          </div>
+        </div>
+
+        <label class="switch" id="safe-enc-row">
+          <input type="checkbox" id="opt-safe-enc">
+          <span class="track" aria-hidden="true"></span>
+          <span class="switch-text">
+            <span data-i18n="opt.safe"></span>
+            <small data-i18n="opt.safe_enc_hint"></small>
+          </span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn primary" id="btn-encrypt" data-i18n="btn.encrypt"></button>
+      </div>
+      <div class="notice" id="enc-notice" role="status" hidden></div>
+    </section>
+
+    <!-- ============================ Decrypt ============================ -->
+    <section class="tabpanel" id="panel-dec" role="tabpanel" aria-labelledby="tab-dec" hidden>
+      <div class="group">
+        <span class="label" data-i18n="label.image"></span>
+        <div class="picker" id="dec-picker">
+          <div class="picker-body">
+            <span class="picker-name" id="dec-name"></span>
+            <span class="picker-dir" id="dec-dir" dir="ltr"></span>
+          </div>
+          <button type="button" class="btn" id="dec-browse" data-i18n="pick.image_btn"></button>
+        </div>
+        <p class="keyhint" id="dec-keyhint" hidden></p>
+      </div>
+
+      <div class="group">
+        <span class="label" data-i18n="label.key"></span>
+        <div class="picker" id="key-picker">
+          <div class="picker-body">
+            <span class="picker-name" id="key-name"></span>
+            <span class="picker-dir" id="key-dir" dir="ltr"></span>
+          </div>
+          <button type="button" class="btn quiet" id="key-clear" data-i18n="pick.key_clear" hidden></button>
+          <button type="button" class="btn" id="key-browse" data-i18n="pick.key_btn"></button>
+        </div>
+      </div>
+
+      <div class="options">
+        <label class="switch">
+          <input type="checkbox" id="opt-safe-dec">
+          <span class="track" aria-hidden="true"></span>
+          <span class="switch-text">
+            <span data-i18n="opt.safe"></span>
+            <small data-i18n="opt.safe_dec_hint"></small>
+          </span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn primary" id="btn-decrypt" data-i18n="btn.decrypt"></button>
+        <button type="button" class="btn" id="btn-check" data-i18n="btn.check"></button>
+      </div>
+      <div class="notice" id="dec-notice" role="status" hidden></div>
+
+      <div class="result" id="dec-result" hidden>
+        <div class="result-head">
+          <h2 data-i18n="result.title"></h2>
+          <button type="button" class="btn" id="btn-copy" data-i18n="btn.copy"></button>
+          <button type="button" class="btn" id="btn-save-text" data-i18n="btn.save"></button>
+        </div>
+        <textarea id="dec-text" dir="auto" readonly data-i18n-placeholder="result.empty"></textarea>
+      </div>
+    </section>
+  </main>
+
+  <figure class="stage">
+    <div class="tile">
+      <canvas id="canvas" width="1" height="1" role="img" aria-labelledby="caption"></canvas>
+    </div>
+    <figcaption id="caption"></figcaption>
+  </figure>
+
+  <pre class="log" id="log" dir="ltr" hidden></pre>
+
+  <footer class="statusbar">
+    <div class="meter" id="meter" role="progressbar" data-i18n-aria="progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+    <span class="status" id="status"></span>
+    <button type="button" class="btn quiet" id="btn-cancel" data-i18n="btn.cancel" hidden></button>
+    <button type="button" class="btn quiet" id="btn-log" aria-expanded="false" aria-controls="log" data-i18n="btn.log"></button>
+    <span class="credit" dir="ltr">Byte Exploder — By <a href="https://github.com/AGlegendery" target="_blank" rel="noopener">AGlegend</a></span>
+  </footer>
+</div>
+<div class="tour" id="tour" hidden>
+  <div class="tour-spot" id="tour-spot"></div>
+  <div class="tour-card" id="tour-card" role="dialog" aria-modal="true" aria-labelledby="tour-title" aria-describedby="tour-body">
+    <h2 id="tour-title"></h2>
+    <p id="tour-body"></p>
+    <div class="tour-foot">
+      <span class="tour-count" id="tour-count"></span>
+      <button type="button" class="btn quiet" id="tour-skip" data-i18n="tour.skip"></button>
+      <button type="button" class="btn" id="tour-prev" data-i18n="tour.prev"></button>
+      <button type="button" class="btn primary" id="tour-next"></button>
+    </div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
